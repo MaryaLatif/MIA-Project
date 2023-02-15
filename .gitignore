@@ -117,5 +117,5 @@ dist
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
-./ts-built
+./ts-built/*
 .pnp.*
