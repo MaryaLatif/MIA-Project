@@ -1,13 +1,43 @@
+:root {
+	/* Colors */
+    --primary-color: #027368;
+    --secondary-color: #389E8F;
+    --tertiary-color: rgb(0, 57, 52);
+    --main-background-color: rgba(56, 158, 143, 0.4);
+
+	/* Font sizes */
+	--basic-font-size: 18px;
+	--font-size--little: 0.7rem;
+	--font-size--small: 0.9rem;
+	--font-size--normal: 1rem;
+	--font-size--medium: 1.2rem;
+	--font-size--large: 1.5rem;
+	--font-size--huge: 2rem;
+
+	/* Spacers for margin and padding */
+	--spacer-1: 0.25rem;
+	--spacer-2: 0.5rem;
+	--spacer-3: 0.75rem;
+	--spacer-4: 1rem;
+	--spacer-5: 1.5rem;
+
+	/* Border */
+    --border-1: 5px;
+    --border-2: 10px;
+    --border-3: 20px;
+    --border-4: 30px;
+}
+
 #details-mod-left {
 	height: 100%;
 	width: 38%;
 	border-radius: 10px;
-	border: 1px solid rgba(56, 158, 143, 1);
+	border: 1px solid var(--secondary-color);
 	border-left-width: 8px;
 	box-shadow: 6px 6px 16px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	align-items: center;
-	padding-left: 15px ;
+	padding-left: var(--spacer-4);
 }
 
 
@@ -15,24 +45,27 @@
 	height: 100%;
 	width: 54%;
 	border-radius: 10px;
-	border: 1px solid rgba(56, 158, 143, 1);
+	border: 1px solid var(--secondary-color);
 	border-left-width: 8px;
 	box-shadow: 6px 6px 16px 0px rgba(0, 0, 0, 0.25);
 	display: flex;
 	align-items: center;
-	padding-left: 15px;
+	padding-left: var(--spacer-4);
 }
+
 #next-title {
-	color:rgba(0, 57, 52, 1);
-	font-size:large;
+	color: var(--tertiary-color);
+	font-size: var(--font-size--medium);
 }
+
 #cdt {
 	height: 53px;
 	width: 95%;
-	margin-right: 20px;
+	margin-right: var(--spacer-5);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.13);
 }
-#cdt>nav{
+
+#cdt>nav {
 	width: 40%;
 	height: 100%;
 	display: flex;
@@ -42,23 +75,26 @@
 #tab {
 	width: 95%;
 	height: 80%;
-	border-radius: 10px;
+	border-radius: var(--border-2);
 	box-shadow: 6px 6px 16px 0px rgba(0, 0, 0, 0.3);
 }
+
 #green-header {
-	background-color: rgba(56, 158, 143, 0.4);
-	border-radius: 10px 10px 0 0;
+	background-color: var(--main-background-color);
+	border-radius: var(--border-2) var(--border-2) 0 0;
 	display: flex;
 	justify-content: space-between;
-	padding: 0px 20px 0px 20px;
+	padding: 0px var(--spacer-5) 0px var(--spacer-5);
 }
-.main-top{
+
+.main-top {
 	width: 95%;
 	height: 16%;
 	display: flex;
 	justify-content: space-between;
 }
-#next-class{
+
+#next-class {
 	height: 100%;
 	width: 100%;
 	display: flex;
