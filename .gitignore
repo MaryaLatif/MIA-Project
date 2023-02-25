@@ -121,3 +121,7 @@ dist
 
 # ts-built
 ts-built/*
+.DS_Store
+
+# prisma generated client
+__generated__/*
