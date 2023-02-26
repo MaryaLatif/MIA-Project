@@ -16,8 +16,9 @@ logger.info("Creating express server.");
 const app = express();
 const port = process.env.PORT;
 
-logger.info("Setting express json middleware.");
+logger.info("Setting express middleware.");
 app.use(express.json())
+app.use(express.static(__dirname + '/../src/app/'));
 
 logger.info("Registering modules.");
 const injector = new Injector();
@@ -38,8 +39,8 @@ registerWebServices(app);
 /**
  * Endpoint permettant d'accéder aux pages html
  */
-app.get('/', (_: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
+app.get('/', (req: Request, res: Response) => {
+  res.sendFile( __dirname + '/../src/app/' +req.path);
 });
 
 app.listen(port, () => {
