@@ -1,0 +1,31 @@
+:root {
+    /* Colors */
+    --primary-color: #027368;
+    --secondary-color: #389E8F;
+    --tertiary-color: rgb(0, 57, 52);
+    --main-background-color: rgba(56, 158, 143, 0.4);
+    --border-color: rgba(56, 158, 143, 0.2);
+    
+
+    /* Font sizes */
+    --basic-font-size: 18px;
+    --font-size--little: 0.7rem;
+    --font-size--small: 0.9rem;
+    --font-size--normal: 1rem;
+    --font-size--medium: 1.2rem;
+    --font-size--large: 1.5rem;
+    --font-size--huge: 2rem;
+
+    /* Spacers for margin and padding */
+    --spacer-1: 0.25rem;
+    --spacer-2: 0.5rem;
+    --spacer-3: 0.75rem;
+    --spacer-4: 1rem;
+    --spacer-5: 1.5rem;
+
+    /* Border */
+    --border-1: 5px;
+    --border-2: 10px;
+    --border-3: 20px;
+    --border-4: 30px;
+}
