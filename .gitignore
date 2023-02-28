@@ -121,3 +121,4 @@ dist
 
 # ts-built
 ts-built/*
+.DS_Store
