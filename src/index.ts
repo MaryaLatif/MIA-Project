@@ -6,7 +6,6 @@ import { Injector } from 'plume-ts-di';
 // import { registerDbModule } from './back-end/db/db-module';
 import { registerServices } from './back-end/services/services-module';
 // import { PrismaClient } from './../__generated__/prisma';
-
 const logger = new Logger('index');
 
 logger.info("Fetching server configuration.");

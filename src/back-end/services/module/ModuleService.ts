@@ -44,6 +44,20 @@ export class ModuleService {
             download: true
         },
         {
+            id: 1,
+            name: "Variable",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "Matrice",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
             id: 2,
             name: "C",
             semester: 2,
@@ -77,6 +91,48 @@ export class ModuleService {
         {
             id: 1,
             name: "TD Condition, boucle",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "TD Variable",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "TD Matrice",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "TD Matrice 1",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "TD Matrice 2",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "TD Algo",
+            semester: 1,
+            dateAdd: new Date(2023,2,22).toDateString(),
+            download: true
+        },
+        {
+            id: 1,
+            name: "TD Dico",
             semester: 1,
             dateAdd: new Date(2023,2,22).toDateString(),
             download: true
@@ -161,7 +217,6 @@ export class ModuleService {
         this.courses.map((Courses) =>{
             if(Courses.id == id){
                 coursesList.push(Courses);
-                console.log(Courses.dateAdd);
             }
         })
         return coursesList;

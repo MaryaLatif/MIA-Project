@@ -125,3 +125,4 @@ ts-built/*
 
 # prisma generated client
 __generated__/*
+/.idea/

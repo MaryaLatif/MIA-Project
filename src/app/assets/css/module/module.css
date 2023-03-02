@@ -25,6 +25,7 @@ body {
 .navbar-top {
     height: 15%;
     width: 100%;
+    box-sizing: border-box;
     border-bottom: 2px solid var(--primary-color);
     display: flex;
     justify-content: space-around;
@@ -40,7 +41,7 @@ body {
 }
 
 .navbar-bottom {
-    height: 10%;
+    height: 9%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -95,4 +96,8 @@ body {
 .list-module:hover {
     background-color: var(--tertiary-color);
     cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: white;
 }
