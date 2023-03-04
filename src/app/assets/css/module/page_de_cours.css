@@ -205,4 +205,51 @@
 #loupe{
 	height: 60%;
 	width: 10%;
+	cursor: pointer;
+}
+
+
+/* Responsive Design */
+@media screen and (max-height: 700px) {
+	.next-title-p{
+		font-size: var(--font-size--small);
+	}
+	#next-title{
+		margin: 0px;
+	}
+	#research, #tab{
+		font-size: var(--font-size--small);
+	}
+	#search-in-tab > input{
+		font-size: x-small ;
+	}
+	body{
+		overflow: scroll;
+	}
+	
+}
+
+.error-search{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	border-bottom: solid var(--border-color) 1px;
+}
+
+@media screen and (max-width: 900px) {
+    .next-title-p{
+		font-size: var(--font-size--small);
+	}
+	#next-title{
+		margin: 0px;
+	}
+	#research, #tab{
+		font-size: var(--font-size--small);
+	}
+	#search-in-tab > input{
+		font-size: x-small ;
+	}
 }

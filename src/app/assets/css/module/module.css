@@ -37,7 +37,6 @@ body {
     width: 100%;
     overflow: scroll;
     color: white;
-    text-align: center;
 }
 
 .navbar-bottom {
@@ -88,8 +87,8 @@ body {
     list-style: none;
     display: flex;
     align-items: center;
-    justify-content: center;
     font-size: large;
+    padding-left: 10px;
     border-radius: 0px var(--border-4) var(--border-4) 0px;
 }
 
@@ -100,4 +99,28 @@ body {
 a {
     text-decoration: none;
     color: white;
+}
+
+/* Responsive Design */
+@media screen and (max-height: 700px) {
+    .navbar-top > p {
+        font-size: var(--font-size--medium);
+    }
+	.list-module{
+        font-size: var(--font-size--small);
+    }
+    .navbar-bottom >p{
+        font-size: x-small;
+    }
+}
+@media screen and (max-width: 900px) {
+    .navbar-top > p {
+        font-size: var(--font-size--medium);
+    }
+	.list-module{
+        font-size: var(--font-size--small);
+    }
+    .navbar-bottom >p{
+        font-size: x-small;
+    }
 }

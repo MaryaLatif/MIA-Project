@@ -9,7 +9,7 @@ export type Courses = {
     id: number,
     name: string,
     semester: number,
-    dateAdd?: string,
+    dateAdd: string,
     download?: boolean
 
 }
@@ -18,7 +18,7 @@ export type Td = {
     id: number,
     name: string,
     semester: number,
-    dateAdd?: string,
+    dateAdd: string,
     download?: boolean
 }
 
@@ -26,6 +26,6 @@ export type Tp = {
     id: number,
     name: string,
     semester: number,
-    dateAdd?: string,
+    dateAdd: string,
     download?: boolean
 }

@@ -19,7 +19,56 @@ export class ModuleService {
             name: "Communication",
             prof: "Ciara Citron",
             email: "ciara.citron@univ-paris13.fr"
-        }
+        },
+        {
+            id: 4,
+            name: "JavaScript",
+            prof: "Bosc Marcel",
+            email: "bosc.marcel@univ-paris13.fr"
+        },
+        {
+            id: 5,
+            name: "Graphe",
+            prof: "Hebert David",
+            email: "hebert.david@univ-paris13.fr"
+        },
+        {
+            id: 6,
+            name: "Gestion",
+            prof: "Tour Clair",
+            email: "tour.clair@univ-paris13.fr"
+        },
+        {
+            id: 7,
+            name: "Base de Donnée",
+            prof: "Abir Hocine",
+            email: "abor.hocine@univ-paris13.fr"
+        },
+        {
+            id: 8,
+            name: "Java",
+            prof: "Azzag Hanane",
+            email: "azzag.hanane@univ-paris13.fr"
+        },
+        {
+            id: 9,
+            name: "Droit",
+            prof: "Bamba Aboudouramane",
+            email: "bamba.aboudouramane@univ-paris13.fr"
+        },
+        {
+            id: 10,
+            name: "Réseaux",
+            prof: "Mayero Micaela",
+            email: "mayero.micaela@univ-paris13.fr"
+        },
+        {
+            id: 11,
+            name: "HTML/CSS",
+            prof: "Lemoin Jsp",
+            email: "lemoin@univ-paris13.fr"
+        },
+
     ];
     private courses: Courses[] = [
         {
@@ -33,28 +82,28 @@ export class ModuleService {
             id: 1,
             name: "Table de hachage",
             semester: 1,
-            dateAdd: new Date(2023,2,22).toDateString(),
+            dateAdd: new Date(2023,2,21).toDateString(),
             download: true
         },
         {
             id: 1,
             name: "Condition, boucle",
             semester: 1,
-            dateAdd: new Date(2023,2,22).toDateString(),
+            dateAdd: new Date(2023,2,20).toDateString(),
             download: true
         },
         {
             id: 1,
             name: "Variable",
             semester: 1,
-            dateAdd: new Date(2023,2,22).toDateString(),
+            dateAdd: new Date(2022,2,22).toDateString(),
             download: true
         },
         {
             id: 1,
             name: "Matrice",
             semester: 1,
-            dateAdd: new Date(2023,2,22).toDateString(),
+            dateAdd: new Date(2023,2,21).toDateString(),
             download: true
         },
         {
@@ -85,7 +134,7 @@ export class ModuleService {
             id: 1,
             name: "TD Table de hachage",
             semester: 1,
-            dateAdd: new Date(2023,2,22).toDateString(),
+            dateAdd: new Date(2023,2,20).toDateString(),
             download: true
         },
         {
@@ -165,7 +214,7 @@ export class ModuleService {
             id: 1,
             name: "TP Table de hachage",
             semester: 1,
-            dateAdd: new Date(2023,2,22).toDateString(),
+            dateAdd: new Date(2023,2,20).toDateString(),
             download: true
         },
         {
@@ -213,6 +262,20 @@ export class ModuleService {
     }
 
     public getCourses(id: number): Courses[]{ //renvoyer les cours du module
+        let i: number = 1;
+        while (i < this.courses.length){
+            let j: number = 0;
+            while(j < i){
+                if(new Date(this.courses[i].dateAdd) < new Date(this.courses[j].dateAdd)){
+                    let a: Courses = this.courses[i];
+                    this.courses[i] = this.courses[j];
+                    this.courses[j] = a;
+                }
+                j++;
+            }
+            i++;
+        }
+
         const coursesList: Courses[] = [];
         this.courses.map((Courses) =>{
             if(Courses.id == id){
@@ -223,6 +286,20 @@ export class ModuleService {
     }
 
     public getTd(id: number): Td[]{ //renvoyer la liste des td
+        let i: number = 1;
+        while (i < this.td.length){
+            let j: number = 0;
+            while(j < i){
+                if(new Date(this.td[i].dateAdd) < new Date(this.td[j].dateAdd)){
+                    let a: Courses = this.td[i];
+                    this.td[i] = this.td[j];
+                    this.td[j] = a;
+                }
+                j++;
+            }
+            i++;
+        }
+
         const tdList: Td[] = [];
         this.td.map((Td) =>{
             if(Td.id == id){
@@ -233,6 +310,20 @@ export class ModuleService {
     }
 
     public getTp(id: number): Tp[]{ //renvoyer la liste des tp
+        let i: number = 1;
+        while (i < this.tp.length){
+            let j: number = 0;
+            while(j < i){
+                if(new Date(this.tp[i].dateAdd) < new Date(this.tp[j].dateAdd)){
+                    let a: Courses = this.tp[i];
+                    this.tp[i] = this.tp[j];
+                    this.tp[j] = a;
+                }
+                j++;
+            }
+            i++;
+        }
+
         const tpList: Tp[] = [];
         this.tp.map((Tp) => {
             if(Tp.id == id){
@@ -240,5 +331,50 @@ export class ModuleService {
             }
         })
         return tpList;
+    }
+
+    public getResearch(id: number, send: string): object[]{
+        let re = new RegExp(`${send}`, "i");
+        type Res = {
+            name?: string,
+            semester?: number,
+            dateAdd?: string,
+            download?: boolean
+        };
+        const listRes: object[] = [];
+
+        this.courses.map((Courses)=>{
+            if(re.test(Courses.name) && id == Courses.id){
+                const res: Res = {};
+                res.name = Courses.name;
+                res.semester = Courses.semester;
+                res.dateAdd = Courses.dateAdd;
+                res.download = Courses.download;
+                listRes.push(res);
+            }
+        });
+        this.td.map((Td) =>{
+            if(re.test(Td.name) && id == Td.id) {
+                const res: Res = {};
+                res.name = Td.name;
+                res.semester = Td.semester;
+                res.dateAdd = Td.dateAdd;
+                res.download = Td.download;
+                listRes.push(res);
+            }
+        })
+        this.tp.map((Tp)=>{
+            if(re.test(Tp.name) && id == Tp.id) {
+                const res: Res = {};
+                res.name = Tp.name;
+                res.semester = Tp.semester;
+                res.dateAdd = Tp.dateAdd;
+                res.download = Tp.download;
+                listRes.push(res);
+            }
+        });
+
+        if(listRes.length != 0) return listRes;
+        else return [{error: "Cette recherche n'existe pas"}];
     }
 }

@@ -17,11 +17,6 @@ let tpListner;
 let td = document.getElementById("td");
 let tdListner;
 
-/**
- * Permet d'ajouter les on click listners sur les onglet cours / td / tp
- * pour le module actuel
- * @param id 
- */
 
 
 fetch(`${baseUrl}`) //récup les modules dès que la page est ouverte pour les afficher dans la navbar
@@ -50,7 +45,8 @@ fetch(`${baseUrl}`) //récup les modules dès que la page est ouverte pour les a
 
 updateModuleTeacher(id);
 getElementsTab(`${baseUrl}/${id}/cours`);
-addTabEventListeners(id);
+addTabEventListeners(id); 
+
 
 
 fetch(`${baseUrl}/user/${nip}`)
@@ -61,3 +57,4 @@ fetch(`${baseUrl}/user/${nip}`)
         document.getElementById("first-name").textContent = data[0];
         document.getElementById("last-name").textContent = data[1];
     })
+

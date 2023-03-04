@@ -1,4 +1,4 @@
-import {Express, json} from 'express';
+import {Express, json, response} from 'express';
 import {ModuleService} from "../../services/module/ModuleService";
 
 
@@ -44,4 +44,8 @@ export function ModuleWs(app: Express) {
         res.json(tpList.getTp(id));
     })
 
+    app.post(`${BaseUrl}/:id/research`, (req, res) =>{
+        const search = new ModuleService();
+        res.json(search.getResearch(+req.params.id, req.body.research));
+    })
 }
