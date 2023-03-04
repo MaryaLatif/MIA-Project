@@ -48,4 +48,8 @@ export function ModuleWs(app: Express) {
         const search = new ModuleService();
         res.json(search.getResearch(+req.params.id, req.body.research));
     })
+
+    app.get(`${BaseUrl}/download`, (req, res)=>{
+        res.sendFile("/Users/marya/Dev/MIA-Project/src/app/assets/images/discord.png");
+    })
 }

@@ -122,6 +122,7 @@ function afficherElementsTab(tab) { // fonction pour afficher que 4 cours/td/tp
         let semester = document.createElement("div");
         let dateAdd = document.createElement("div");
         let download = document.createElement("div");
+        let downloadImg = document.createElement("img");
 
         name.className = "courses";
         semester.className = "courses";
@@ -132,8 +133,29 @@ function afficherElementsTab(tab) { // fonction pour afficher que 4 cours/td/tp
         name.textContent = tab[i].name;
         semester.textContent = tab[i].semester;
         dateAdd.textContent = tab[i].dateAdd;
-        if (tab[i].download) download.textContent = "Cliquer pour télécharger";
-        else download.textContent = "Téléchargement impossible";
+
+
+        if (tab[i].download) { //
+            downloadImg.src = "/assets/images/download.png";
+            const downloadFile = document.createElement("a");
+            downloadImg.className = "imgDownload";
+            downloadFile.className = "download";
+            fetch(`${baseUrl}/download`) //requête fetch pour renvoyer le fichier à télécharger
+                .then(res => res.blob())
+                .then((blob) => {
+                    const fileUrl = URL.createObjectURL(blob);
+                    downloadFile.href = fileUrl;
+                    downloadFile.download = blob;
+                })
+            downloadFile.appendChild(downloadImg);
+            download.appendChild(downloadFile);
+        }
+        else {
+            downloadImg.className = "download";
+            downloadImg.src = "/assets/images/Notdownload.png";
+            //ajout de l'image download ou not download
+            download.appendChild(downloadImg);
+        }
 
         //ajout des éléments crées dans le parent (le li qui contient le nom, semestre date ...)
         course.append(name, semester, dateAdd, download);
