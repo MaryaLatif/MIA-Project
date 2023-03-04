@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>MIA's Courses</title>
+    <link rel="stylesheet" href="/assets/css/module/module.css" />
+    <link href="/assets/css/module/page_de_cours.css" rel="stylesheet" />
+    <link rel='stylesheet' href='/assets/css/module/variable.css' />
+</head>
+
+<body>
+    <nav id="logoAccueil"> <a href="" ><img src="/assets/images/logo.png" alt="logo mia" /> </a></nav>
+    <div class="left-side">
+        <nav class="navbar"> <!--Barre de navigation principale avec logo et nom de l'utilisateur-->
+            <nav class="navbar-top"> <!--Bloc avk logo et nom utilisateur-->
+                <a href="" id="logo"><img src="/assets/images/logo.png" alt="logo mia" /></a>
+                <p><span id="last-name"></span> <span id="first-name"></span></p>
+            </nav>
+            <nav class="navbar-module"> <!--Nav pour modules-->
+
+            </nav>
+            <nav class="navbar-bottom"> <!--Nav réseaux sociaux + déconnexion-->
+                <div class="icon">
+                    <img src="/assets/images/snapchat.png" alt="logo snapchat" />
+                    <img src="/assets/images/insta.png" alt="logo instagram" />
+                    <img src="/assets/images/discord.png" alt="logo discord" />
+                </div>
+                <p>Se déconnecter</p>
+            </nav>
+        </nav>
+    </div>
+
+
+    <section id="right-side">
+        <div class="main-top">
+            <div id='details-mod-left'>
+                <div id='next-class'>
+                    <p id='next-title'><strong>Enseignant</strong></p>
+                    <div class="next-title-p">
+                        <p><span><strong>Nom : </strong><span id="nom-prof"></span> </span><span><strong>Email
+                                    : </strong><span id="email-prof"></span></span></p>
+
+                    </div>
+                </div>
+            </div>
+            <div id='details-mod-right'>
+                <div id='next-class'>
+                    <p id='next-title'><strong>Prochain cours du module</strong></p>
+                    <div class="next-title-p">
+                        <p><span><strong>Cours</strong> : Developpement d'applications avec IHM</span>
+                            <span><strong>Salle</strong> :
+                                num_salle</span>
+                        </p>
+                        <p><span><strong>Type</strong> : TP/TD/Cours</span><span><strong>Date</strong> : Date
+                                heure</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="main-bottom">
+            <div id="cdt">
+                <nav>
+                    <p id="cours"><strong>Cours</strong></p>
+                    <p id="td"><strong>Travaux dirigés</strong></p>
+                    <p id="tp"><strong>Travaux pratiques</strong></p>
+                </nav>
+            </div>
+            <div id="research">
+                <p id="nb-elmt">nb elmt</p>
+                <div id="search-in-tab"><input id = "search" type="search" name="cours-td-tp" placeholder="Rechercher">
+                    <img src="/assets/images/loupe.png" id="loupe" />
+                </div>
+            </div>
+            <div id='tab'>
+                <div id='green-header'>
+                    <ul class="list-courses">
+                        <li class="courses" id="nom-tab">Cours</li>
+                        <li class="courses">Semestre</li>
+                        <li class="courses">Date d'ajout</li>
+                        <li class="courses">Télécharger</li>
+                    </ul>
+                </div>
+                <div id="tab-content"></div>
+                <div id="tab-bottom">
+                    <button id="precedent">
+                        < &nbsp Précédent</button>
+                            <p id="nb-page"></p>
+                            <button id="suivant">Suivant &nbsp > </button>
+                </div>
+            </div>
+        </section>
+    </section>
+    <script src="/assets/js/functionModule.js"></script>
+    <script src="/assets/js/module.js"></script>
+</body>
+
+</html>
