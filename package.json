@@ -1,7 +1,7 @@
 {
   "name": "MIA",
   "version": "1.0.0",
-  "main": "./ts-built/index.js",
+  "main": "./ts-built/back-end/index.js",
   "license": "MIT",
   "dependencies": {
     "@prisma/client": "4.10.1",
@@ -24,13 +24,16 @@
     "ts-node": "^10.9.1",
     "ts-transformer-classname": "1.0.4",
     "ttypescript": "^1.5.15",
-    "typescript": "4.9.3"
+    "typescript": "4.9.3",
+    "vite": "^4.3.2"
   },
   "scripts": {
     "build": "tsc",
     "start": "node ts-built/index.js",
-    "dev": "concurrently \"ttsc --project tsconfig.json -w\" \"nodemon -q ts-built/index.js\"",
-    "pull-db": "npx prisma db pull && prisma-case-format --file \"prisma/schema.prisma\" && pnpify prisma generate"
+    "dev": "concurrently \"yarn watch-ts\" \"vite --host\" \"yarn watch-ts-node\" \"nodemon -q ts-built/back-end/index.js\"",
+    "pull-db": "npx prisma db pull && prisma-case-format --file \"prisma/schema.prisma\" && pnpify prisma generate",
+    "watch-ts": "ttsc --project tsconfig.json -w",
+    "watch-ts-node": "ttsc --project tsconfig-node.json -w"
   },
   "packageManager": "yarn@3.4.1",
   "dependenciesMeta": {

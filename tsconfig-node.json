@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",                                /* Specify what module code is generated. */
+    "rootDirs": ["./src/back-end", "./building/ts-transformers"],                                   /* Allow multiple folders to be treated as one when resolving modules. */
+    "outDir": "ts-built/back-end",                                   /* Specify an output folder for all emitted files. */
+  },
+  "include": [
+    "src/back-end",
+    "asset.d.ts"
+  ]
+}

@@ -1,10 +1,11 @@
-import express, { Request, Response } from 'express';
+import express, {Request, Response} from 'express';
 import dotenv from 'dotenv';
-import { registerWebServices } from './back-end/webservices/ws-modules';
-import { Logger } from 'simple-logging-system';
-import { Injector } from 'plume-ts-di';
+import {registerWebServices} from './webservices/ws-modules';
+import {Logger} from 'simple-logging-system';
+import {Injector} from 'plume-ts-di';
 // import { registerDbModule } from './back-end/db/db-module';
-import { registerServices } from './back-end/services/services-module';
+import {registerServices} from './services/services-module';
+import path from 'path';
 // import { PrismaClient } from './../__generated__/prisma';
 const logger = new Logger('index');
 
@@ -34,14 +35,6 @@ registerWebServices(app);
 //     logger.error("failled to connect to the database", {e});
 //   });
 
-
-/**
- * Endpoint permettant d'accéder aux pages html
- */
-app.get('/', (req: Request, res: Response) => {
-  res.sendFile( __dirname + '/../src/app/' +req.path);
-});
-
 app.listen(port, () => {
-  logger.info(`⚡️[server]: Server is running at http://localhost:${port}`);
+    logger.info(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
